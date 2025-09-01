@@ -1,0 +1,41 @@
+Function Growth Comparison in C:
+This program compares the growth of different mathematical functions and arranges them in increasing order of their values for a large input size n. It also checks which functions are asymptotically equivalent (Θ-equivalent) by comparing their ratios at two different input sizes.
+
+Features:
+Implements 12 growth functions (e.g., n log n, sqrt(n), n^2, 3^n, etc.).
+Sorts them in increasing order of values for a given n.
+Prints the function names alongside their computed values in scientific notation.
+Approximates Θ-equivalence using ratio comparisons at two test points (n1 = 10000, n2 = 1000000).
+
+Functions Implemented:
+n log n
+12 sqrt(n)
+1/n
+n^(log2 n)
+100n^2 + 6n
+n^0.51
+n^2 - 324
+50 sqrt(n)
+2n^3
+3^n
+2^32 n
+log2 n
+
+How It Works:
+All functions are implemented as separate double functions in C.
+An array of function pointers is used to store and call them dynamically.
+The program evaluates all functions for a large n (default: 100000).
+A simple bubble sort arranges them in increasing order based on their computed values.
+For Θ-equivalence, ratios of function pairs are checked at two points (n1 and n2). If the ratios remain roughly constant (within a factor of 2), the functions are considered Θ-equivalent.
+
+Notes:
+The sorting is based on values at a particular n, not theoretical asymptotic classes.
+Θ-equivalence checking is only approximate (since it uses finite test points).
+Some functions like 3^n grow extremely fast, so values may overflow to inf for large n.
+
+Why I Made This:
+This program was written as part of practice with algorithm analysis and growth functions. It helped me revise:
+Function pointers in C
+Sorting logic
+Using the math library (log, sqrt, pow)
+Θ-notation concepts in a practical way

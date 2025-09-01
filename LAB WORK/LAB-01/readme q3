@@ -1,0 +1,34 @@
+Defective Coin Finder Using Divide and Conquer:
+
+Problem Statement:
+This program helps identify if there is a defective coin among a pile of coins. All coins are supposed to have the same exact weight, but one coin may be lighter because the worker shaped it for too long. The worker is sure the coin is not heavier than the others, only possibly lighter or perfect.
+The goal is to find out which coin is lighter or confirm that all the coins are of equal weight using a balance weighing scale approach. The algorithm used is a divide and conquer method that finds the lighter coin efficiently in around 
+O(log₂ n)+c time, where n is the total number of coins.
+
+How It Works:
+The coins are divided into two groups (or almost two if odd number of coins).
+These two groups are weighed against each other using a simulated balance scale function.
+If one group is lighter, the defective coin must be in that group, so the search continues recursively there.
+If the groups weigh the same, the defective coin (if any) must be the extra one excluded from balancing in cases of odd numbers.
+If all coins balance out perfectly, it reports no defective coin found.
+This approach minimizes the number of weighings needed and efficiently narrows down the search space by half each time.
+
+Key Functions in the Code:
+
+weigh(int coins[], int start1, int end1, int start2, int end2):
+Simulates the balance scale by summing weights of two segments of coins and comparing them.
+Returns -1 if first group is lighter, 1 if heavier, and 0 if they weigh the same.
+
+findDefective(int coins[], int start, int end):
+Uses divide and conquer to find the lighter coin index.
+Divides coins into two halves.
+Calls weigh on two halves or near halves if odd number of coins.
+Based on comparison, recursively narrows search.
+If only one coin remains, returns that coin as defective.
+Returns -1 if no defective coin is found.
+
+How to Use:
+Input the number of coins when prompted.
+Enter the weight of each coin.
+The program will output the index (0-based) of the defective lighter coin if found.
+If all coins are of equal weight, it reports no defective coin.

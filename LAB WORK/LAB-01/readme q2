@@ -1,0 +1,45 @@
+Problem Statement:
+Ternary Search:- Like binary search, in ternary search an n element list is divided into nearly three equal intervals. Then the search will be in one of the intervals.
+The task was to-
+Design and implement an algorithm to search an element z in a sorted list of size n using ternary search.
+Explain the complexity analysis of the algorithm.
+Compare ternary search with binary search.
+Justify through implementation whether ternary search is better than binary search.
+
+Algorithm Design:
+Binary Search:
+Repeatedly divide the list into two halves.
+Compare the middle element with the target.
+Discard half the list each iteration.
+Runs in O(log₂ n) time.
+Needs only 1 comparison per step.
+
+Ternary Search:
+Divide the list into three nearly equal parts.
+Compare the target with both midpoints (mid1 and mid2).
+Based on the result, search in one of the three intervals.
+Runs in O(log₃ n) time.
+Needs 2 comparisons per step.
+
+Complexity Analysis:
+Binary Search:
+Time Complexity = O(log₂ n)
+Space Complexity = O(1)
+
+Ternary Search:
+Time Complexity = O(log₃ n)
+Space Complexity = O(1)
+
+Although log₃ n < log₂ n (fewer steps), ternary search performs two comparisons per step, while binary search performs only one.
+This makes binary search faster in practice.
+
+Implementation:
+The code is in C (lab1q2.c) and
+Implements both binary search and ternary search iteratively.
+Counts the number of comparisons made.
+Prints a comparisons table and an ASCII graph where "*" represents binary search and "#" represents ternary search.
+
+Conclusion:
+Binary Search is better than Ternary Search.
+Even though ternary search reduces the range faster, the extra comparisons at each step make it less efficient.
+The growth of comparisons, as shown in the table and graph, clearly demonstrates that binary search requires fewer operations than ternary search for large inputs.

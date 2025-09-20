@@ -1,0 +1,38 @@
+Infix to Postfix Conversion and Evaluation in C:
+This program converts an arithmetic expression from infix notation to postfix notation (Reverse Polish Notation) and then evaluates the result using a stack.
+
+Features:
+Converts infix expressions (e.g., 3+5*2) into postfix (352*+).
+Evaluates postfix expressions with support for +, -, *, /, and ^.
+Uses stacks for both operators and evaluation.
+Handles parentheses in infix expressions.
+
+Functions Implemented:
+push(char c) / pop() / peek() – stack operations for operators.
+pushEval(int val) / popEval() – stack operations for evaluation.
+precedence(char op) – returns operator precedence.
+infixToPostfix(char infix[], char postfix[]) – converts infix to postfix.
+evaluatePostfix(char postfix[]) – evaluates the postfix expression.
+
+How It Works:
+User enters an infix expression.
+The program scans it left to right:
+Operands are added directly to postfix.
+Operators are pushed/popped based on precedence.
+Parentheses are handled correctly.
+After conversion, the postfix expression is displayed.
+The postfix expression is evaluated using a stack:
+Operands are pushed.
+Operators pop two values, compute the result, and push back.
+The final result is displayed.
+
+Notes:
+Assumes valid infix expressions (no error handling for malformed input).
+Only works for single-digit operands.
+Exponentiation ^ is implemented as repeated multiplication.
+                                 
+Why I Made This:
+To practice-
+  Stack data structure implementation in C.
+  Conversion between infix and postfix expressions.
+  Postfix evaluation algorithm.

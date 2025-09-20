@@ -1,0 +1,40 @@
+AVL Tree Implementation in C
+This program implements an AVL tree (a self-balancing binary search tree) that maintains logarithmic height by performing rotations after insertions and deletions.
+
+Features:
+Insertion of nodes with automatic balancing.
+Deletion of nodes with rebalancing.
+Preorder traversal printing.
+Rotations (left, right, left-right, right-left) to keep the tree balanced.
+
+Functions Implemented:
+newNode(int key) – creates a new node.
+height(struct Node *n) – returns the height of a node.
+rightRotate(struct Node* y) – performs a right rotation.
+leftRotate(struct Node* x) – performs a left rotation.
+getBalance(struct Node* n) – computes balance factor.
+insert(struct Node* node, int key) – inserts a key and balances the tree.
+deleteNode(struct Node* root, int key) – deletes a key and balances the tree.
+preOrder(struct Node* root) – prints the tree in preorder traversal.
+
+How It Works:
+Nodes are inserted like in a normal BST.
+After insertion/deletion, the balance factor of each node is checked.
+If imbalance is detected, appropriate rotations are applied-
+  Left rotation
+  Right rotation
+  Left-Right rotation
+  Right-Left rotation
+Deletion handles nodes with zero, one, or two children and rebalances afterward.
+Preorder traversal shows the final balanced tree structure.
+
+Notes:
+Balancing keeps operations (insert, delete, search) in O(log n) time.
+Preorder traversal demonstrates the balancing effect after operations.
+Example: inserting {10, 20, 30, 40, 50, 25} shows rebalancing, then deleting 40 rebalances again.
+
+Why I Made This:
+To understand and practice:
+Self-balancing binary search trees.
+Rotations in AVL trees.
+Maintaining logarithmic complexity in search trees.
